@@ -84,8 +84,8 @@ if st.button("Predict Loan Status"):
   })
   prediction = model.predict(input_data)
   probability = model.predict_proba(input_data)
-  approval_prob = probability[0][1]
-  if prediction[0] == 1:
+  approval_prob = probability[0][0]
+  if prediction[0] == 0:
     st.success("Loan Approved")
   else:
     st.error("Loan Rejected")
